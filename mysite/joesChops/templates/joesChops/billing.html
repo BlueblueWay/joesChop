@@ -1,0 +1,55 @@
+{% extends 'joesChops/base.html' %}
+
+{% block title %} Billing detail - Joe's Chops {% endblock %}
+
+{% block content %}
+
+    <form method="post">
+        <h2>Your Billing information</h2>
+        <br>
+        <h3>Customer</h3>
+        <u1>
+            <li> Name: {{customer.Last_Name}}, {{customer.First_Name}}</li>
+        </u1>
+        <br>
+
+        <h3>Vehicle Information</h3>
+        <u1>
+            <li> your vehicle: {{vehicle.Make}}, {{vehicle.Model}}</li>
+        </u1>
+        <br>
+        <h3>Item List</h3>
+        <u1>
+            {% for i in itemCost %}
+            <u1>
+                <li> Item Name: {{i.Item_id.Item}} </li>
+                <li> Parts: {{i.Item_id.Parts}} </li>
+                <li> Description: {{i.Item_id.Description}} </li>
+                <li> Unit Price: ${{i.Item_id.Price}} </li>
+                <li> Quantity: {{i.Quantity}} </li>
+                <br>
+            </u1>
+            {% endfor %}
+            Total Item cost: ${{totalItemCost}}
+            <br>
+        </u1>
+        <br>
+
+        <h3>Labor</h3>
+        <u1>
+            <li> Stage: {{laborCost.Stage}} </li>
+            <li> Time: {{laborCost.Time}} day </li>
+            <li> Employee: {{employee.Last_Name}}, {{employee.First_Name}}</li>
+            <li> Cost: ${{laborCost.Cost}} </li>
+        </u1>
+        <br>     
+
+        <h3>Billing Detail</h3>
+        <u1>
+            <li> Total Price: {{total}} </li>
+            <li> Finish Date: {{ItemBilling.Finish_date}} </li>
+        </u1>
+        <br>     
+    </form>
+{% endblock %}
+

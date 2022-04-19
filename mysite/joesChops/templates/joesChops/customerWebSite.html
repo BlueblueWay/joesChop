@@ -1,0 +1,48 @@
+{% extends 'joesChops/base.html' %}
+
+{% block title %} Customer Web Site Plan - Joe's Chops {% endblock %}
+
+{% block content %}
+
+    <h2>Your Information</h2>
+    <u1>
+        <li> Name: {{customer.Last_Name}}, {{customer.First_Name}}</li>
+
+    </u1>
+    <br>
+
+    <h3>images:</h3>
+    <u1>
+        {% for i in photo %}
+        <br>
+        <li> <img src="{{i.Image.url}}"> </li>
+        <li> created date: {{i.Photo_day}} </li>
+        <br>
+        {% endfor %}
+    </u1>
+    <br>
+
+    <h3>Questions:</h3>
+    <u1>
+        {% for j in question %}
+            {% if j.Answer == None %}
+                
+                <li> Question: {{j.Question}} </li>
+                <li> Answer: {{j.Answer}} </li>
+                <li> Date: {{j.Date}} </li>
+                <li> Waiting for response </li>
+
+                <a href="/replayQuestion/{{j.id}}"> <button type="button", name="reply">reply</button> </a> 
+                </form>
+                
+            {% else %}
+        <li> Question: {{j.Question}} </li>
+        <li> Answer: {{j.Answer}} </li>
+        <li> Date: {{j.Date}} </li>
+            {% endif %}
+        <br>
+        {% endfor %}
+    </u1>
+    <br>
+
+{% endblock %}

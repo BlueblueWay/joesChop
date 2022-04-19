@@ -1,0 +1,18 @@
+{% extends 'joesChops/base.html' %}
+
+{% block content %}
+    <p><h3>Customization Plan</h3></p>
+
+    <form method="post" action="/customizationPlan/create/">
+        <h2>Customer infomation</h2>
+        {% csrf_token %}
+        {{form_Customer.as_p}}
+        <h2>Vehicle infomation</h2>
+        {% csrf_token %}
+        {{form_Vehicle.as_p}}
+        <h2>Basic Customization plan</h2>
+        {% csrf_token %}
+        {{form_Plan.as_p}}
+        <button type="submit", name="save">Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'joesChops/base.html' %}
+
+{% block title %} Customer Index - Joe's Chops {% endblock %}
+
+{% block content %}
+
+<form method="post">
+    <li> Service Customer site </li>
+    <li> Enter your plan id </li>
+    <li>
+        {% csrf_token %}
+        {{form_Server.as_p}}
+     </li>
+
+    
+    <button type="submit", name="save">Submit</button>
+</form>
+
+{% endblock %}

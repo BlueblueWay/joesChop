@@ -1,0 +1,28 @@
+{% extends 'joesChops/base.html' %}
+
+{% block title %} Customiaztion Plan - Joe's Chops {% endblock %}
+
+{% block content %}
+    This is your customization plan and don't share your (Plan id: {{plan.id}}) with others
+    <h2>Your Information</h2>
+    <u1>
+        <li> Name: {{customer.Last_Name}}, {{customer.First_Name}}</li>
+        <li> Address: {{customer.Address}} </li>
+        <li>City: {{customer.City}}</li>
+        <li>State: {{customer.State}}</li>
+        <li>ZIPCode: {{customer.ZIPCode}}</li>
+        <li>Phone: {{customer.Phone}}</li>
+        <li>Email: {{customer.Email}}</li> 
+    </u1>
+    <br>
+    <h3>Employee Information</h3>
+    <u1>
+        <li> Name: {{employee.Last_Name}}, {{employee.First_Name}}</li>
+    </u1>
+    <br>
+    <h3>Vehicle Information</h3>
+    <u1>
+        <li> your vehicle: {{vehicle.Make}}, {{vehicle.Model}}</li>
+    </u1>
+
+{% endblock %}

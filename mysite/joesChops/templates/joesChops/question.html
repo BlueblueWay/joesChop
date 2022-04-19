@@ -1,0 +1,16 @@
+{% extends 'joesChops/base.html' %}
+
+{% block title %} Question - Joe's Chops {% endblock %}
+
+{% block content %}
+
+<form method="post">
+    Question: {{question.Question}}
+    {% csrf_token %}
+    {{form_Question.as_p}}
+
+    
+    <button type="submit", name="save">Submit</button>
+</form>
+
+{% endblock %}
